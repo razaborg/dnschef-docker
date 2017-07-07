@@ -5,4 +5,4 @@ RUN pip install --upgrade pip \
 && pip install IPy
 RUN git clone https://github.com/iphelix/dnschef.git
 RUN mkdir /config && cp /dnschef/dnschef.ini /config/
-ENTRYPOINT ["/dnschef/dnschef.py", "--file", "/config/dnschef.ini"]
+ENTRYPOINT ["/dnschef/dnschef.py", "--file", "/config/dnschef.ini","--interface", "0.0.0.0" ,"-q"]
