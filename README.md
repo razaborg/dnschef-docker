@@ -12,15 +12,12 @@ This set-up allow you to easily manage the dnschef script by editing the /config
 ## Example 
 
 
+To run DNSChef and bind the 53/udp port to the host (on the host's local interface):
+
 ```
 docker build . -t dnschef
-docker run --rm -it -v ./config:/config dnschef
+docker run -d --name dnschef -v /host/config/folder:/config -p 127.0.0.1:53:53/udp dnschef
 ```
 
-### With docker-compose
-
-```
-docker-compose up -d
-```
 
 
